@@ -2,10 +2,11 @@
 mission: NOX-3
 title: 'Online self-service policy changes'
 role: product
-status: draft
+status: approved
 version: 1
 author: dev
 ai_drafted: false
+approved_at: 2026-10-06T02:41:45Z
 ---
 
 # Product spec: Online self-service policy changes
