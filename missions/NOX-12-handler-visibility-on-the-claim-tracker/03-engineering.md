@@ -3,7 +3,7 @@ mission: NOX-12
 title: 'Handler visibility on the claim tracker'
 role: engineering
 status: approved
-version: 1
+version: 2
 author: unknown
 ai_drafted: false
 approved_at: 2026-10-18T10:42:42Z
@@ -113,12 +113,12 @@ The implementation will follow the existing React Server Component pattern in Ne
 
 ## Verification checklist
 
-- [ ] Scope matches the design: only `customer-portal` (`tw-digital/customer-portal`) has changed; `claims-management`, `claims-intake`, and `notifications-hub` remain untouched.
-- [ ] Contract `GET /v1/claims/{id}` consumed from `claims-management` is verified unchanged and backward-compatible.
-- [ ] Contract `GET /claims/{id}` additive UI changes render handler first name, team, and assignment date without breaking existing consumers.
-- [ ] The architecture adheres to Next.js 15 App Router Server Component patterns with API communication localized in `lib/api.ts`.
-- [ ] Architectural decision [[kb:customer-portal/decisions/adr-claim-tracker-step-mapping]] is superseded to document the new `assigned` -> `"In review"` milestone mapping.
-- [ ] Privacy guardrail is honoured: direct telephone numbers and email addresses are never displayed in the tracker UI or DOM (AC-7).
-- [ ] The test strategy is delivered at every named level (unit, integration, contract, end-to-end).
-- [ ] Mobile responsiveness is verified on small viewports (320px–375px) without horizontal clipping.
-- [ ] Rollback plan (container image revert) has been verified and is ready if needed.
+- [x] Scope matches the design: only `customer-portal` (`tw-digital/customer-portal`) has changed; `claims-management`, `claims-intake`, and `notifications-hub` remain untouched.
+- [x] Contract `GET /v1/claims/{id}` consumed from `claims-management` is verified unchanged and backward-compatible.
+- [x] Contract `GET /claims/{id}` additive UI changes render handler first name, team, and assignment date without breaking existing consumers.
+- [x] The architecture adheres to Next.js 15 App Router Server Component patterns with API communication localized in `lib/api.ts`.
+- [x] Architectural decision [[kb:customer-portal/decisions/adr-claim-tracker-step-mapping]] is superseded to document the new `assigned` -> `"In review"` milestone mapping.
+- [x] Privacy guardrail is honoured: direct telephone numbers and email addresses are never displayed in the tracker UI or DOM (AC-7).
+- [x] The test strategy is delivered at every named level (unit, integration, contract, end-to-end).
+- [x] Mobile responsiveness is verified on small viewports (320px–375px) without horizontal clipping.
+- [x] Rollback plan (container image revert) has been verified and is ready if needed.
