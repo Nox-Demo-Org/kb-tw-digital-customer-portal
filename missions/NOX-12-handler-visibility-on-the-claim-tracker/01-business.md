@@ -2,10 +2,11 @@
 mission: NOX-12
 title: 'Handler visibility on the claim tracker'
 role: business
-status: draft
+status: approved
 version: 1
 author: Maya Shah
 ai_drafted: false
+approved_at: 2026-10-18T10:34:47Z
 ---
 
 # Business requirement: Handler visibility on the claim tracker
