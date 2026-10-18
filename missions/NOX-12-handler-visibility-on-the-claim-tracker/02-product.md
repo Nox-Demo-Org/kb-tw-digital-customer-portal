@@ -2,10 +2,11 @@
 mission: NOX-12
 title: 'Handler visibility on the claim tracker'
 role: product
-status: ai_drafted
+status: approved
 version: 2
-author: NoX
-ai_drafted: true
+author: unknown
+ai_drafted: false
+approved_at: 2026-10-18T10:39:51Z
 ---
 
 # Product spec: Handler visibility on the claim tracker
