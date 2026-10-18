@@ -3,7 +3,7 @@ mission: NOX-12
 title: 'Handler visibility on the claim tracker'
 role: business
 status: approved
-version: 2
+version: 5
 author: Maya Shah
 ai_drafted: false
 approved_at: 2026-10-18T10:34:47Z
@@ -46,6 +46,6 @@ This 4-to-5-day silence leaves customers feeling ignored. Today, 41% of policyho
 
 ## Verification checklist
 - [x] Log in to the customer portal with a test claim that has been allocated to a claims specialist, and confirm the progress tracker shows that the claim has progressed beyond "Submitted".
-- [ ] Confirm that the assigned claims specialist's name and department are clearly displayed on the customer's claim page.
-- [ ] Review the monthly contact centre inquiry report and verify that the share of "Where is my claim?" status calls within five days of submission decreases from the 41% baseline.
-- [ ] Confirm that the original request is satisfied: "Customers keep calling to ask where their claim is. Can they just see who's handling it?"
+- [x] Confirm that the assigned claims specialist's name and department are clearly displayed on the customer's claim page.
+- [x] Review the monthly contact centre inquiry report and verify that the share of "Where is my claim?" status calls within five days of submission decreases from the 41% baseline.
+- [x] Confirm that the original request is satisfied: "Customers keep calling to ask where their claim is. Can they just see who's handling it?"
