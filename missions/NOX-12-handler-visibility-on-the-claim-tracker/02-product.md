@@ -3,7 +3,7 @@ mission: NOX-12
 title: 'Handler visibility on the claim tracker'
 role: product
 status: approved
-version: 3
+version: 8
 author: unknown
 ai_drafted: false
 approved_at: 2026-10-18T10:39:51Z
@@ -75,9 +75,11 @@ Continued monthly expenditure of thousands of pounds on avoidable status inquiry
 
 - [x] AC-1: Verify that an internally assigned claim displays the active milestone advanced to "In review" rather than "Submitted".
 - [ ] AC-2: Verify that the assigned handler's first name and team are clearly displayed on the claim tracking screen.
-- [ ] AC-3: Verify that the handler assignment date appears in UK date format (`DD/MM/YYYY`) on the claim tracking screen.
-- [ ] AC-4: Verify that an unassigned submitted claim remains on the "Submitted" milestone with the reported date and shows no handler information.
-- [ ] AC-5: Verify that claims in subsequent states ("In review", "Settled", "Paid") continue to display the assigned handler's name alongside their current milestone.
+  - Verdict: failed
+  - Note: Say "Your claims handler" before the name, so customers know who it is.
+- [x] AC-3: Verify that the handler assignment date appears in UK date format (`DD/MM/YYYY`) on the claim tracking screen.
+- [x] AC-4: Verify that an unassigned submitted claim remains on the "Submitted" milestone with the reported date and shows no handler information.
+- [x] AC-5: Verify that claims in subsequent states ("In review", "Settled", "Paid") continue to display the assigned handler's name alongside their current milestone.
 - [ ] AC-6: Verify that reassigning a claim internally immediately updates the handler name and assignment date on the next portal view.
 - [ ] AC-7: Verify that the claim tracking screen displays only the handler's first name and team, and never displays direct contact details (such as direct telephone number or personal email address).
 - [ ] Edge case (Unassigned claim during initial intake): Verify that claims in submitted status render without empty handler containers or formatting errors.
