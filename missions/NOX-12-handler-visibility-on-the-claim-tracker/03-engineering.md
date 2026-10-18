@@ -2,10 +2,11 @@
 mission: NOX-12
 title: 'Handler visibility on the claim tracker'
 role: engineering
-status: ai_drafted
+status: approved
 version: 1
-author: NoX
-ai_drafted: true
+author: unknown
+ai_drafted: false
+approved_at: 2026-10-18T10:42:42Z
 ---
 
 # Engineering design: Handler visibility on the claim tracker
