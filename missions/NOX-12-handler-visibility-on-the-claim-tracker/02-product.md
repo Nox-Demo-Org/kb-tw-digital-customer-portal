@@ -3,7 +3,7 @@ mission: NOX-12
 title: 'Handler visibility on the claim tracker'
 role: product
 status: approved
-version: 2
+version: 3
 author: unknown
 ai_drafted: false
 approved_at: 2026-10-18T10:39:51Z
@@ -73,7 +73,7 @@ Continued monthly expenditure of thousands of pounds on avoidable status inquiry
 
 ## Verification checklist
 
-- [ ] AC-1: Verify that an internally assigned claim displays the active milestone advanced to "In review" rather than "Submitted".
+- [x] AC-1: Verify that an internally assigned claim displays the active milestone advanced to "In review" rather than "Submitted".
 - [ ] AC-2: Verify that the assigned handler's first name and team are clearly displayed on the claim tracking screen.
 - [ ] AC-3: Verify that the handler assignment date appears in UK date format (`DD/MM/YYYY`) on the claim tracking screen.
 - [ ] AC-4: Verify that an unassigned submitted claim remains on the "Submitted" milestone with the reported date and shows no handler information.
