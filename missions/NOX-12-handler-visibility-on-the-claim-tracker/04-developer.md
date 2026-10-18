@@ -3,7 +3,7 @@ mission: NOX-12
 title: 'Handler visibility on the claim tracker'
 role: developer
 status: approved
-version: 1
+version: 2
 author: unknown
 ai_drafted: false
 approved_at: 2026-10-18T10:47:40Z
@@ -136,13 +136,13 @@ approved_at: 2026-10-18T10:47:40Z
 
 ## Verification checklist
 
-- [ ] Task 1 done: `getClaim` in `lib/api.ts` configured with `{ cache: "no-store" }`.
-- [ ] Task 2 done: `lib/format.ts` created with `formatHandlerDisplay` and `formatUkDate`.
-- [ ] Task 3 done: `STEP_FOR.assigned` updated to `"In review"` in `app/claims/[id]/page.tsx`.
-- [ ] Task 4 done: Handler name, team, and assignment date rendered in `app/claims/[id]/page.tsx` for non-submitted claims, with unassigned claims displaying submission copy only.
-- [ ] Task 5 done: Unit and integration tests written and passing in `__tests__/lib/format.test.ts` and `__tests__/claims/page.test.tsx`.
-- [ ] Named tests cover AC-1 through AC-7 and edge cases.
-- [ ] Reused components (`STEPS`, `BASE`, `Claim` interface, `<ol>` markup) not duplicated.
-- [ ] Contracts `GET /v1/claims/{id}` and Pub/Sub event `claims.handler.assigned` in upstream services remain untouched.
-- [ ] Handler privacy rule verified: no phone numbers or personal email addresses exposed in markup.
-- [ ] Rollout steps verified and rollback image identified.
+- [x] Task 1 done: `getClaim` in `lib/api.ts` configured with `{ cache: "no-store" }`.
+- [x] Task 2 done: `lib/format.ts` created with `formatHandlerDisplay` and `formatUkDate`.
+- [x] Task 3 done: `STEP_FOR.assigned` updated to `"In review"` in `app/claims/[id]/page.tsx`.
+- [x] Task 4 done: Handler name, team, and assignment date rendered in `app/claims/[id]/page.tsx` for non-submitted claims, with unassigned claims displaying submission copy only.
+- [x] Task 5 done: Unit and integration tests written and passing in `__tests__/lib/format.test.ts` and `__tests__/claims/page.test.tsx`.
+- [x] Named tests cover AC-1 through AC-7 and edge cases.
+- [x] Reused components (`STEPS`, `BASE`, `Claim` interface, `<ol>` markup) not duplicated.
+- [x] Contracts `GET /v1/claims/{id}` and Pub/Sub event `claims.handler.assigned` in upstream services remain untouched.
+- [x] Handler privacy rule verified: no phone numbers or personal email addresses exposed in markup.
+- [x] Rollout steps verified and rollback image identified.
