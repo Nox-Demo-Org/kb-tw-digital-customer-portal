@@ -3,7 +3,7 @@ mission: NOX-12
 title: 'Handler visibility on the claim tracker'
 role: product
 status: ai_drafted
-version: 1
+version: 2
 author: NoX
 ai_drafted: true
 ---
@@ -19,16 +19,17 @@ Provide policyholders with immediate visibility into their assigned claims speci
 - **As a contact centre agent**, I want the customer portal claim tracker to accurately mirror handler allocation, so that customers who have already spoken with a claims handler do not call in confused by an out-of-date status [[kb:customer-portal/concepts/contact-centre-escalations]].
 
 ## Acceptance criteria
+
 - **AC-1 (Progress milestone advancement on assignment)**: Given a policyholder has submitted an insurance claim that has been internally allocated to a claims handler, When the policyholder views the claim tracking screen in customer-portal, Then the visual progress indicator shows the claim has advanced to "In review" rather than remaining on "Submitted" [[kb:customer-portal/decisions/adr-claim-tracker-step-mapping]], [[media:ec737e1c-b9a3-4877-8a01-95476cbe35eb]], [[media:d1540d7c-27ed-4c39-9dc2-67414c025c75]].
-- **AC-2 (Display of handler name)**: Given a claim has been allocated to a claims specialist, When the policyholder views the claim tracking screen, Then the screen displays the assigned handler's full name alongside the claim status information [[kb:customer-portal/decisions/adr-claim-tracker-step-mapping]], [[media:d1540d7c-27ed-4c39-9dc2-67414c025c75]].
+- **AC-2 (Display of handler name and team)**: Given a claim has been allocated to a claims specialist, When the policyholder views the claim tracking screen, Then the screen displays the assigned handler's first name and team alongside the claim status information [[kb:customer-portal/decisions/adr-claim-tracker-step-mapping]], [[media:d1540d7c-27ed-4c39-9dc2-67414c025c75]].
 - **AC-3 (Display of assignment date)**: Given a claim has an assigned handler with a recorded assignment timestamp, When the policyholder views the claim tracking screen, Then the screen displays the date the handler was assigned in UK date format (`DD/MM/YYYY`) [[kb:customer-portal/concepts/claim-tracking-flow]].
 - **AC-4 (Unassigned claim milestone state)**: Given a newly submitted claim has not yet been allocated to a handler, When the policyholder views the claim tracking screen, Then the progress tracker highlights "Submitted" as the current milestone, displays the original reported date, and does not show any handler details [[kb:customer-portal/concepts/claim-tracking-flow]].
 - **AC-5 (Handler visibility across downstream milestones)**: Given a claim has progressed further in its lifecycle to "In review", "Settled", or "Paid" with an assigned handler, When the policyholder views the claim tracking screen, Then the active progress step reflects the current claim milestone and the assigned handler's name remains visible [[kb:customer-portal/concepts/claim-tracking-flow]].
 - **AC-6 (Handler reassignment update)**: Given a claim is reassigned internally to a new handler, When the policyholder views or refreshes the claim tracking screen, Then the display updates to show the new handler's name and latest assignment date.
+- **AC-7 (Handler privacy and direct contact details)**: Given a claim has an assigned claims handler, When the policyholder views the claim tracking screen, Then the screen displays the handler's first name and team only, and never displays direct contact details (such as a direct telephone number or personal email address).
 
 ### Open questions for the product owner
-1. **Department/team display**: The business requirement mentions displaying the handler's team (e.g. "Home Claims") in addition to their name. Upstream claim data currently provides the handler's name directly, but dedicated team taxonomy is not split out. How should team data be presented? *(suggestion: Render the handler name as supplied by claims-management; if team context is included in the handler record, display it alongside the name, and log a separate backlog item for structured department labels).*
-2. **Progress milestone taxonomy**: Should handler allocation advance the current 4-step progress tracker directly to "In review", or should a dedicated 5th milestone step ("Assigned") be added? *(suggestion: Advance the current 4-step tracker to "In review" upon handler allocation to keep the customer journey clean and linear while immediately eliminating the stuck "Submitted" perception [[kb:customer-portal/decisions/adr-claim-tracker-step-mapping]], [[media:d1540d7c-27ed-4c39-9dc2-67414c025c75]]).*
+1. **Progress milestone taxonomy**: Should handler allocation advance the current 4-step progress tracker directly to "In review", or should a dedicated 5th milestone step ("Assigned") be added? *(suggestion: Advance the current 4-step tracker to "In review" upon handler allocation to keep the customer journey clean and linear while immediately eliminating the stuck "Submitted" perception [[kb:customer-portal/decisions/adr-claim-tracker-step-mapping]], [[media:d1540d7c-27ed-4c39-9dc2-67414c025c75]]).*
 
 ## Edge cases
 - **Unassigned claim during initial intake *(from the map)***: A claim has been submitted but claims-management has not yet assigned a handler (median duration 1.3 working days [[kb:customer-portal/concepts/contact-centre-escalations]]). The tracker must display the "Submitted" milestone with the submission date and the reassuring copy "Reported DD/MM/YYYY. We'll be in touch." without rendering empty handler containers [[kb:customer-portal/concepts/claim-tracking-flow]].
@@ -70,12 +71,14 @@ Continued monthly expenditure of thousands of pounds on avoidable status inquiry
 - **Customer Support & Communications**: Update help articles and customer FAQs explaining the claim tracking milestones on the website.
 
 ## Verification checklist
+
 - [ ] AC-1: Verify that an internally assigned claim displays the active milestone advanced to "In review" rather than "Submitted".
-- [ ] AC-2: Verify that the assigned handler's full name is clearly displayed on the claim tracking screen.
+- [ ] AC-2: Verify that the assigned handler's first name and team are clearly displayed on the claim tracking screen.
 - [ ] AC-3: Verify that the handler assignment date appears in UK date format (`DD/MM/YYYY`) on the claim tracking screen.
 - [ ] AC-4: Verify that an unassigned submitted claim remains on the "Submitted" milestone with the reported date and shows no handler information.
 - [ ] AC-5: Verify that claims in subsequent states ("In review", "Settled", "Paid") continue to display the assigned handler's name alongside their current milestone.
 - [ ] AC-6: Verify that reassigning a claim internally immediately updates the handler name and assignment date on the next portal view.
+- [ ] AC-7: Verify that the claim tracking screen displays only the handler's first name and team, and never displays direct contact details (such as direct telephone number or personal email address).
 - [ ] Edge case (Unassigned claim during initial intake): Verify that claims in submitted status render without empty handler containers or formatting errors.
 - [ ] Edge case (Telephony desynchronisation): Verify that a customer whose claim was assigned and who received phone contact sees the handler's name and advanced status upon logging into the portal.
 - [ ] Edge case (Assigned status with missing handler details): Verify that a fallback message ("Assigned to a claims specialist") appears if an assigned claim has no handler name.
